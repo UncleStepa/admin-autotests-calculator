@@ -1,6 +1,4 @@
 package ru.neoflex.controllers;
-
-
 import io.restassured.http.ContentType;
 import ru.neoflex.model.RequestSaveTestimony;
 
@@ -10,7 +8,7 @@ public class RequestTestController {
 
     //Метод для отправки Post запроса на микросервис.
 
-    public static int  getRequestCode(String uRL, RequestSaveTestimony requestSaveTestimony) {
+    public static int getRequestCode(String uRL, RequestSaveTestimony requestSaveTestimony) {
 
         return given().
                 contentType(ContentType.JSON).
@@ -22,4 +20,16 @@ public class RequestTestController {
                 response().
                 getStatusCode();
     }
+
+    public static int getRequestCodeGetMethod(String uRL) {
+        return given().
+                when().
+                get(uRL).
+                then().
+                extract().
+                response().
+                getStatusCode();
+    }
+
+
 }

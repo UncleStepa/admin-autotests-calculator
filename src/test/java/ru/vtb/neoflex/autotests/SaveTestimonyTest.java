@@ -24,9 +24,9 @@ public class SaveTestimonyTest {
 
 
 
-    
+
     int actualStatusCode = RequestTestController.getRequestCode(saveTestimonyURI, requestSaveTestimony);
-    System.out.println(actualStatusCode);
+    System.out.println("statusCode : " + actualStatusCode);
     Assertions.assertEquals(200, actualStatusCode);
 
   }
